@@ -14,6 +14,9 @@
 #include <iomanip>
 using namespace std;
 
+//Functions
+bool valid_input(int);
+
 int main() {
 
 	//Variables
@@ -33,12 +36,8 @@ int main() {
 	cin >> test1;
 
 	// Test for correct range
-	if (test1 < 0 || test1 > 100)
+	if (!valid_input(test1))
 	{
-		cout << "\n   "
-		 	 << "Enter a test score between 0 and 100\n"
-		 	 << "   "
-		 	 << "Please rerun program";
 		return -1;
 	}
 
@@ -49,12 +48,8 @@ int main() {
 	cin >> test2;
 
 	// Test second input
-	if (test2 < 0 || test2 > 100)
+	if (!valid_input(test2))
 	{
-		cout << "\n   "
-		 	 << "Enter a test score between 0 and 100\n"
-		 	 << "   "
-		 	 << "Please rerun program";
 		return -1;
 	}
 
@@ -65,12 +60,8 @@ int main() {
 	cin >> test3;
 
 	//test 3 input
-	if (test3 < 0 || test3 > 100)
+	if (!valid_input(test3))
 	{
-		cout << "\n   "
-		 	 << "Enter a test score between 0 and 100\n"
-		 	 << "   "
-		 	 << "Please rerun program";
 		return -1;
 	}
 
@@ -111,3 +102,21 @@ int main() {
 
 	return 0;
 }
+
+// Define functions
+bool valid_input(int test)
+{
+	if (test < 0 || test > 100)
+	{
+		cout << "\n   "
+		 	 << "Enter a test score between 0 and 100\n"
+		 	 << "   "
+		 	 << "Please rerun program";
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
